@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(helloworld_with_helloimgui)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 
 # Build hello_imgui
 # =================
@@ -67,3 +67,6 @@ else()
         target_compile_definitions(imgui_bundle_example_integration PRIVATE ASSETS_LOCATION="${assets_install_dir}/assets")
     endif()
 endif()
+
+find_package(yaml-cpp REQUIRED)
+target_link_libraries(hello_world_ PRIVATE yaml-cpp)
